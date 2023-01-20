@@ -74,6 +74,7 @@ button:focus {
 
 .cold {
   background: #035aa6;
+  animation: cold-temperature 1s ease-in-out infinite;
 }
 
 .hot {
@@ -122,6 +123,9 @@ body:hover {
 
 
 /* For cold temp */
+
+
+
 
 .temperature-display.cold{
   transform: rotate(0deg);
@@ -228,3 +232,72 @@ body:hover {
 
 
 /* For Button  */
+
+
+
+/* The animation keyframes */
+@keyframes cold-temperature {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(60deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* The element to apply the animation to */
+.hot {
+  animation: hot-temperature 1s ease-in-out infinite;
+}
+
+/* The animation keyframes */
+@keyframes hot-temperature {
+  0% {
+    filter: brightness(100%);
+  }
+  50% {
+    filter: brightness(150%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+/* The element to apply the animation to */
+.neutral {
+  animation: neutral-temperature 2s ease-in-out infinite;
+}
+
+/* The animation keyframes */
+@keyframes neutral-temperature {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* The element to apply the animation to */
+.neutral {
+  animation: neutral-temperature 2s ease-in-out infinite;
+}
+
+/* The animation keyframes */
+@keyframes neutral-temperature {
+  0% {
+    color: #000000;
+  }
+  50% {
+    color: #777777;
+  }
+  100% {
+    color: #000000;
+  }
+}

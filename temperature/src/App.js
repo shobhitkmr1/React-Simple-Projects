@@ -6,10 +6,9 @@ const App = () => {
 
   const increaseTemperature = () => {
     const newTemperature = temperatureValue + 1;
-    if (newTemperature >= 30) {
+    if (newTemperature >= 20) {
       setTemperatureColor("hot");
-    }
-    else if (newTemperature < 30){
+    } else if (newTemperature > 10 && newTemperature < 20) {
       setTemperatureColor("neutral");
     }
     setTemperatureValue(newTemperature);
@@ -18,17 +17,18 @@ const App = () => {
     const newTemperature = temperatureValue - 1;
     if (newTemperature < 10) {
       setTemperatureColor("cold");
-    }else if (newTemperature > 10) {
+    } else if (newTemperature > 10 && newTemperature < 20) {
       setTemperatureColor("neutral");
     }
     setTemperatureValue(newTemperature);
   };
-  
 
   return (
     <div className="app-container">
       <div className="temperature-display-container">
-        <div className={`temperature-display ${temperatureColor}`}>{temperatureValue}°C</div>
+        <div className={`temperature-display ${temperatureColor}`}>
+          {temperatureValue}°C
+        </div>
       </div>
       <div className="button-container">
         <button onClick={() => increaseTemperature()}>+</button>
